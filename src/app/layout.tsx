@@ -1,12 +1,19 @@
-nano tailwind.config.js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {},
+import './globals.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://alltid.ai'),
+  title: {
+    default: 'AI-telefonsvarare för hantverkare och fastighetsbolag | Alltid Svar',
+    template: '%s | Alltid Svar',
   },
-  plugins: [],
+  description: 'Alltid Svar är en AI-telefonsvarare som besvarar varje kundsamtal på svenska, dygnet runt. Bokar tider, tar emot felanmälningar och ger service 24/7.',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="sv">
+      <body>{children}</body>
+    </html>
+  );
 }
