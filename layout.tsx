@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -212,10 +213,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
-        <script dangerouslySetInnerHTML={{ __html: calEmbedScript }} />
         {/* Plats för externa scripts: SEOella tracking, analytics, Autocalls widget etc */}
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script id="cal-embed" strategy="afterInteractive">
+          {calEmbedScript}
+        </Script>
+      </body>
     </html>
   )
 }
