@@ -1,4 +1,10 @@
-'use client'
+export default function Home() {
+  return (
+    <div className="bg-red-500 text-white p-10">
+      <h1 className="text-4xl font-bold">OM DETTA ÄR RÖTT SÅ FUNKAR TAILWIND</h1>
+    </div>
+  );
+}'use client'
 
 import { useEffect } from 'react'
 import VoiceButton from '../components/VoiceButton';
