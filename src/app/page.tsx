@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import VoiceButton from '@/components/VoiceButton'
+import VoiceButton from '../components/VoiceButton';
 import MeetingPopup from '@/components/MeetingPopup'
 
 const industries = [
